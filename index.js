@@ -6,10 +6,12 @@ import path from "path";
 import bodyParser from "body-parser";
 import { db, SettingState } from "./db.js";
 import { verify } from "./appstore.js";
+import morgan from "morgan";
 
 // init
 const app = express();
 const server = http.createServer(app);
+app.use(morgan("common"));
 app.use(bodyParser.json());
 app.use(express.static("public"));
 
@@ -66,7 +68,7 @@ app.get("/status", (req, res) => {
 	});
 });
 
-const PORT = process.env.PORT || 1313;
+const PORT = process.env.PORT || 1314;
 server.listen(PORT, () => {
 	console.log(`Server is running on port ${PORT}`);
 });
