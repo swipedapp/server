@@ -13,7 +13,7 @@ app.use(express.static("public"));
 
 app.post("/request", (req, res) => {
 	const id = req.body.id;
-    const device = db.prepare(`select * from devices where authkey = ?`)
+	const device = db.prepare(`select * from devices where authkey = ?`)
 		.get(id);
 
 	if (!device) {
@@ -26,24 +26,24 @@ app.post("/request", (req, res) => {
 });
 app.post("/sync", (req, res) => {
 	const id = req.body.id;
-    const size = req.body.size;
-    const device = db.prepare(`select * from devices where authkey = ?`)
+	const size = req.body.size;
+	const device = db.prepare(`select * from devices where authkey = ?`)
 		.get(id);
-    db.prepare(`update devices set size = ? where (authkey)`)
-			.run(id);
+	db.prepare(`update devices set size = ? where (authkey)`)
+		.run(id);
 	if (!device) {
-        res.json({
-		registration: "what"
-	});
+		res.json({
+			registration: "what"
+		});
 	}
 	res.json({
 		registration: device ?? 1
 	});
 });
 app.get("/status", (req, res) => {
-    const size = db.prepare(`SELECT sum(size) FROM devices where settingstate = 1`)
+	const size = db.prepare(`SELECT sum(size) FROM devices where settingstate = 1`)
 		.get()
-        ["sum(size)"];
+	["sum(size)"];
 	res.json({
 		saving: size
 	});
