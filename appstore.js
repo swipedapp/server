@@ -14,7 +14,7 @@ const appleRootCAs = await Promise.all(files
 
 async function verifyInEnv(payload, env) {
 	// @ts-ignore
-	const verifier = new SignedDataVerifier(appleRootCAs, true, env, bundleId, env == Environment.PRODUCTION ? appAppleId : undefined);
+	const verifier = new SignedDataVerifier(appleRootCAs, false, env, bundleId, env == Environment.PRODUCTION ? appAppleId : undefined);
 	const result = await verifier.verifyAndDecodeAppTransaction(payload);
 
 	if (result.bundleId != bundleId) {
@@ -35,5 +35,6 @@ export async function verify(payload) {
 		}
 	}
 
+	console.error("validation failed:", lastError);
 	throw lastError;
 }
