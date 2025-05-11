@@ -61,10 +61,10 @@ app.post("/sync", async (req, res) => {
 });
 
 app.get("/status", (req, res) => {
-	const size = db.prepare(`SELECT sum(size) FROM devices where settingstate = 1`)
+	const size = db.prepare(`SELECT sum(space_saved) total_saved FROM devices where settingstate = 1`)
 		.get();
 	res.json({
-		saving: size
+		size
 	});
 });
 
