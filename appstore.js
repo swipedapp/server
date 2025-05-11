@@ -15,12 +15,15 @@ const appleRootCAs = await Promise.all(files
 async function verifyInEnv(payload, env) {
 	// @ts-ignore
 	const verifier = new SignedDataVerifier(appleRootCAs, false, env, bundleId, env == Environment.PRODUCTION ? appAppleId : undefined);
-	const result = await verifier.verifyAndDecodeAppTransaction(payload);
+	try {
+		const result = await verifier.verifyAndDecodeAppTransaction(payload);
+	} catch (error) {
+		return "fail"
+	}
 
 	if (result.bundleId != bundleId) {
 		throw new Error("girl get the fuck outta here with yo nasty ass, bitch i can smell your dick cheese through this computer bitch. go take a fucking shower and go buy some listerine, you have multiple cavities");
 	}
-
 	return result;
 }
 
@@ -31,7 +34,7 @@ export async function verify(payload) {
 		try {
 			return await verifyInEnv(payload, env);
 		} catch (error) {
-			lastError = error;
+			return "fail"
 		}
 	}
 

@@ -20,15 +20,23 @@ async function getTransactionID(receipt) {
 	return result.appTransactionId;
 }
 
-app.post("/register", async (req, res) => {
+app.post("/register", async (req, res, err) => {
 	const authKey = await getTransactionID(req.body.receipt);
+	if (authKey == undefined) {
+		res.status(401).json({
+			code: 1,
+			registration_message: "Could not validate device keys."
+		});
+		return
+	}
 	const device = db.prepare(`select * from devices where authkey = ?`)
 		.get(authKey);
 
-	if (!device) {
+	if (!device && authKey !== undefined) {
 		db.prepare(`insert into devices (authkey) values (?)`)
 			.run(authKey);
 	}
+
 	res.json({
 		registration: device ?? 1
 	});

@@ -3,3 +3,4 @@
 swiped.sqlite3
 *.p8
 .env
+public/font/loos.ttf
