@@ -11,6 +11,7 @@ import morgan from "morgan";
 // init
 const app = express();
 const server = http.createServer(app);
+app.set("trust proxy", 1);
 app.use(morgan("common"));
 app.use(bodyParser.json());
 app.use(express.static("public"));
