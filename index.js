@@ -21,14 +21,17 @@ async function getTransactionID(receipt) {
 }
 
 app.post("/register", async (req, res, err) => {
-	const authKey = await getTransactionID(req.body.receipt);
-	if (authKey == undefined) {
+	let authKey;
+	try {
+		authKey = await getTransactionID(req.body.receipt);
+	} catch (error) {
 		res.status(401).json({
 			code: 1,
 			registration_message: "Could not validate device keys."
 		});
-		return
+		return;
 	}
+
 	const device = db.prepare(`select * from devices where authkey = ?`)
 		.get(authKey);
 
@@ -43,8 +46,17 @@ app.post("/register", async (req, res, err) => {
 });
 
 app.post("/sync", async (req, res) => {
-	const authKey = await getTransactionID(req.body.receipt);
-	const size = req.body.size;
+	let authKey;
+	try {
+		authKey = await getTransactionID(req.body.receipt);
+	} catch (error) {
+		res.status(401).json({
+			code: 1,
+			registration_message: "Could not validate device keys."
+		});
+		return;
+	}
+
 	const device = db.prepare(`select * from devices where authkey = ?`)
 		.get(authKey);
 	if (!device) {
