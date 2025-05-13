@@ -18,7 +18,7 @@
     <p>Users have saved over <span id="bytecounter"></span> with swiped.</p>
     <a class="btn btn-outline-swiped" href="https://testflight.apple.com/join/Xbe867SA" role="button">Add to
         TestFlight</a>
-    <h4 class="tagline">Built with <span id="privacy"></span> in mind</span></h4>
+    <h4 class="tagline">Built with <span id="privacy">10 GB</span> in mind</span></h4>
 
 </body>
 <script>
@@ -42,7 +42,7 @@
             clearInterval(privacyanim);
         }
     }
-    var privacyanim = setInterval(makeid, 250, 7);
+    var privacyanim = setInterval(makeid, 100, 7);
     fetch("status")
         .then(response => response.json())
         .then(data => {
