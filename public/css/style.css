@@ -32,6 +32,10 @@ html {
 }
 
 main > * {
+    min-height: 100vh;
+}
+
+#hero {
     height: 100vh;
 }
 
