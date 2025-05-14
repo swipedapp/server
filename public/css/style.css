@@ -64,6 +64,8 @@ a {
 
 #privacy {
     display: inline-flex;
+    width: 5ch;
+    justify-content: center;
 }
 
 #privacy span {
