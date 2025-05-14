@@ -1,13 +1,38 @@
 @font-face {
     font-family: loos;
-    src: url("/font/loos.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    src: url("../fonts/loos_reg.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: loos;
+    font-weight: 500;
+    font-style: normal;
+    src: url("../fonts/loos_md.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: loos;
+    font-weight: 700;
+    font-style: normal;
+    src: url("../fonts/loos_bold.woff2") format("woff2");
 }
 
 body,
 html {
     font-family: loos, Arial, sans-serif;
-    background-color: black;
+    background-color: transparent;
     color: white;
+    min-height: 100vh;
+}
+
+html {
+    background: #000 url(../images/gradient.svg) 0 0/contain no-repeat;
+}
+
+main > * {
+    height: 100vh;
 }
 
 .green {
@@ -17,7 +42,6 @@ a {
     text-align: center;
 }
 .btn-outline-swiped {
-    
     --bs-btn-color: white;
     --bs-btn-border-color: rgb(0, 255, 0);
     --bs-btn-hover-color: black;
@@ -32,4 +56,13 @@ a {
     --bs-btn-disabled-bg: transparent;
     --bs-btn-disabled-border-color: rgb(0, 255, 0);
     --bs-gradient: none
+}
+
+#privacy {
+    display: inline-flex;
+}
+
+#privacy span {
+    width: 0.9ch;
+    text-align: center;
 }

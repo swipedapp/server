@@ -2,5 +2,5 @@
 /node_modules
 swiped.sqlite3
 *.p8
+*.woff2
 .env
-public/font/loos.ttf
