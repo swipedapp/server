@@ -25,7 +25,7 @@ function doPrivacy(entries) {
             result += '<span>' + characters.charAt(Math.floor(Math.random() * charactersLength)) + '</span>';
         }
 
-        if (p < 25) {
+        if (p < 50) {
             p++
             privacy.innerHTML = result;
         } else {
@@ -33,7 +33,7 @@ function doPrivacy(entries) {
             clearInterval(privacyanim);
         }
     }
-    var privacyanim = setInterval(makeid, 100, 5);
+    var privacyanim = setInterval(makeid, 50, 5);
 }
 
 fetch("status")
