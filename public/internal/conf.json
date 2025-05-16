@@ -1,0 +1,5 @@
+{
+	"isAlertEnabled": true,
+	"alertTitle": "Update Required",
+	"alertContents": "To continue using 'swiped.', you need to update the app in TestFlight."
+}
