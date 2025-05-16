@@ -1,7 +1,7 @@
 {
-	"isAlertEnabled": false,
-	"alertTitle": "",
-	"alertContents": "",
-	"alertButtonText": "",
-	"alertButtonURL": ""
+	"isAlertEnabled": true,
+	"appliesToVersion": "1.0",
+	"appliesToBuild": "32",
+	"alertTitle": "Update Required",
+	"alertContents": "To continue using 'swiped.', you need to update the app in TestFlight."
 }
