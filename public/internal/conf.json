@@ -1,7 +1,7 @@
 {
 	"isAlertEnabled": true,
 	"appliesToVersion": "1.0",
-	"appliesToBuild": "1",
+	"appliesToBuild": "7",
 	"alertTitle": "Update Required",
 	"alertContents": "To continue using 'swiped.', you need to update the app in TestFlight."
 }
