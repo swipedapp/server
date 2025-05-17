@@ -45,6 +45,10 @@ main > * {
     min-height: 100vh;
 }
 
+.page {
+    padding: 6em 0;
+}
+
 #hero {
     height: 100vh;
 }
