@@ -2,6 +2,7 @@
     font-family: loos;
     font-weight: 400;
     font-style: normal;
+    font-display: block;
     src: url("../fonts/loos_reg.woff2") format("woff2");
 }
 
@@ -9,6 +10,7 @@
     font-family: loos;
     font-weight: 500;
     font-style: normal;
+    font-display: block;
     src: url("../fonts/loos_md.woff2") format("woff2");
 }
 
@@ -16,6 +18,7 @@
     font-family: loos;
     font-weight: 700;
     font-style: normal;
+    font-display: block;
     src: url("../fonts/loos_bold.woff2") format("woff2");
 }
 
