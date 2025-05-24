@@ -1,7 +1,10 @@
 {
 	"isAlertEnabled": true,
 	"appliesToVersion": "1.0",
-	"appliesToBuild": "32",
-	"alertTitle": "Update Required",
-	"alertContents": "To continue using 'swiped.', you need to update the app in TestFlight."
+	"appliesToBuild": "34",
+	"alertTitle": "swiped. is now available!",
+	"alertContents": "Thanks for using swiped. To continue using the app, you will need to update the app in the App Store.",
+	"alertButtonText": "Open App Store",
+	"alertButtonURL": "https://swiped.pics/download"
+
 }
