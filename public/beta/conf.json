@@ -7,6 +7,6 @@
 	"isButtonEnabled": true,
 	"alertButtonText": "Open App Store",
 	"alertButtonURL": "https://swiped.pics/download",
-	"minimumiOSVersion": "18.0",
+	"minimumiOSVersion": "19.0",
 	"hasDroppedSupport": true
 }
