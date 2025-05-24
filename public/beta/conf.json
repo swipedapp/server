@@ -4,7 +4,10 @@
 	"appliesToBuild": "34",
 	"alertTitle": "swiped. is now available!",
 	"alertContents": "Thanks for using swiped. To continue using the app, you will need to update the app in the App Store.",
+	"isButtonEnabled": true,
 	"alertButtonText": "Open App Store",
-	"alertButtonURL": "https://swiped.pics/download"
+	"alertButtonURL": "https://swiped.pics/download",
+	"minimumiOSVersion": "19.0",
+	"hasDroppedSupport": true
 
 }
